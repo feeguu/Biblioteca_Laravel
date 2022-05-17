@@ -28,7 +28,10 @@
                         <span class="my-2 text-lg">Estoque</span>
                         <input type="text" name="estoque" class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white">
                     </div>
-                    <button class="mt-16 bg-indigo-500 w-1/2 rounded-xl self-center self text-white">Cadastrar</button>
+                    <div class="flex justify-around">
+                        <button class="btn-secondary">Voltar</button>
+                        <button class="btn-primary">Cadastrar</button>
+                    </div>
                 </div>
             </form>
         </div>

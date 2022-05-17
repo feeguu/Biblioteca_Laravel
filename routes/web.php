@@ -30,7 +30,7 @@ Route::post('/cadastrar-produto', function(Request $request) {
         'estoque' => $request->estoque,
     ]);
 
-    echo "Produto criado com sucesso!";
+    return view('inicio');
 });
 
 Route::get('/listar-produto', function(){
@@ -42,7 +42,7 @@ Route::get('/listar-produto/{id}', function ($id) {
     if($produto){
         return view('listar', ['produto' => $produto]);
     }
-    echo "ID Inválido";
+    return view('inicio');
 });
 
 Route::get('/editar-produto', function(){
@@ -54,7 +54,7 @@ Route::get('/editar-produto/{id}', function ($id) {
     if($produto){
         return view('editar', ['produto' => $produto]);
     } else {
-        echo "ID Inválido";
+        return view('inicio');
     }
 });
 
@@ -66,7 +66,7 @@ Route::post('/editar-produto/{id}', function(Request $request, $id) {
         'estoque' => $request->estoque,
     ]);
 
-    echo "Produto editado com sucesso!";
+    return view('inicio');
 });
 
 Route::get('/excluir-produto', function(){
@@ -78,8 +78,8 @@ Route::get('/excluir-produto/{id}', function ($id) {
     $produto = Produto::find($id);
     if($produto){
         $produto->delete();
-        echo "Produto excluido com sucesso!";
+        return view('inicio');
     } else {
-        echo "ID Inválido";
+        return view('inicio');
     }
 });

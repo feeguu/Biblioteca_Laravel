@@ -2164,6 +2164,10 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+function goBack() {
+  window.location.href = "/";
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

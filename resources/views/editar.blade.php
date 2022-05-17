@@ -10,6 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
     </style>
+    <script src="{}"></script>
 
 </head>
 
@@ -28,7 +29,8 @@
                         <span class="my-2 text-lg">Estoque</span>
                         <input type="text" name="estoque" class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white" value="{{ $produto->estoque }}">
                     </div>
-                    <button class="mt-16 bg-indigo-500 w-1/2 rounded-xl self-center self text-white">Editar</button>
+                    <button type="button" onclick="" class="btn-secondary">Voltar</button>
+                    <button type="submit" class="btn-primary">Editar</button>
                 </div>
         </div>
         </form>

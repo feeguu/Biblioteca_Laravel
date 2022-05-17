@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply mt-16 w-1/4 h-8 rounded-sm self-center bg-indigo-500 text-white;
+    }
+
+    .btn-secondary {
+        @apply btn-primary border-2 border-indigo-500 text-black bg-transparent;
+    }
+}
