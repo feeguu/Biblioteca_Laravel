@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", function() {
+Route::get("/", function () {
     return view('inicio');
 });
 
@@ -23,42 +23,46 @@ Route::get('/cadastrar-produto', function () {
     return view('cadastrar');
 });
 
-Route::post('/cadastrar-produto', function(Request $request) {
-    Produto::create([
-        'nome' => $request->nome,
-        'valor' => $request->valor,
-        'estoque' => $request->estoque,
-    ]);
+Route::post('/cadastrar-produto', function (Request $request) {
+    if($request->nome && $request->valor && $request->estoque){
+        Produto::create([
+            'nome' => $request->nome,
+            'valor' => $request->valor,
+            'estoque' => $request->estoque,
+        ]);
+        return view('inicio');
+    } else {
+        echo "Dados inválidos";
+    }
 
-    return view('inicio');
 });
 
-Route::get('/listar-produto', function(){
+Route::get('/listar-produto', function () {
     return view("selecionar");
 });
 
 Route::get('/listar-produto/{id}', function ($id) {
     $produto = Produto::find($id);
-    if($produto){
+    if ($produto) {
         return view('listar', ['produto' => $produto]);
     }
-    return view('inicio');
+    echo 'ID inválido';
 });
 
-Route::get('/editar-produto', function(){
+Route::get('/editar-produto', function () {
     return view("selecionar");
 });
 
 Route::get('/editar-produto/{id}', function ($id) {
     $produto = Produto::find($id);
-    if($produto){
+    if ($produto) {
         return view('editar', ['produto' => $produto]);
     } else {
-        return view('inicio');
+        echo 'ID inválido';
     }
 });
 
-Route::post('/editar-produto/{id}', function(Request $request, $id) {
+Route::post('/editar-produto/{id}', function (Request $request, $id) {
     $produto = Produto::find($id);
     $produto->update([
         'nome' => $request->nome,
@@ -69,17 +73,17 @@ Route::post('/editar-produto/{id}', function(Request $request, $id) {
     return view('inicio');
 });
 
-Route::get('/excluir-produto', function(){
+Route::get('/excluir-produto', function () {
     return view("selecionar");
 });
 
 Route::get('/excluir-produto/{id}', function ($id) {
-    
+
     $produto = Produto::find($id);
-    if($produto){
+    if ($produto) {
         $produto->delete();
         return view('inicio');
     } else {
-        return view('inicio');
+        echo 'ID inválido';
     }
 });

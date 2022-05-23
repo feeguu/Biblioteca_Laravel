@@ -11,7 +11,7 @@
 
 <body>
     <div class="flex h-screen w-screen items-center justify-center bg-indigo-500">
-        <div class="flex h-3/5 w-1/2 flex-col items-center rounded-lg bg-slate-200 p-8 font-sans">
+        <div class="flex h-3/5 w-1/4 flex-col items-center rounded-lg bg-slate-200 p-8 font-sans">
             <h1 class="text-3xl">Produtos</h1>
             <div class="item mt-8 flex h-full w-full flex-col items-center">
                 <a href="/cadastrar-produto"

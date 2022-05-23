@@ -10,25 +10,34 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
     </style>
-
+    <script>
+        function goBack() {
+            window.location.href = "/"
+        }
+    </script>
 </head>
 
 <body>
     <div class="h-screen w-screen bg-indigo-500 flex items-center justify-center">
-        <div class="h-3/5 w-1/2 bg-slate-200 rounded-lg p-8 flex items-center font-sans flex-col">
+        <div class="h-3/5 w-1/4 bg-slate-200 rounded-lg p-8 flex items-center font-sans flex-col">
             <h1 class="text-3xl">Produtos</h1>
             <div class="flex flex-col mt-6 h-full">
                 <div>
                     <span class="my-2 text-lg">Nome</span>
-                    <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white" value="{{$produto->nome}}">
+                    <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white"
+                        value="{{ $produto->nome }}">
                     <span class="my-2 text-lg">Valor</span>
-                    <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white" value="{{$produto->valor}}">
+                    <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white"
+                        value="{{ $produto->valor }}">
                     <span class="my-2 text-lg">Estoque</span>
-                    <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white" value="{{$produto->estoque}}">
+                    <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white"
+                        value="{{ $produto->estoque }}">
                 </div>
             </div>
+            <div class="h-full w-full flex justify-center">
+                <button class="btn-secondary" onclick="goBack()">Voltar</button>
+            </div>
         </div>
-        <button class="btn-secondary">Voltar</button>
     </div>
 </body>
 
