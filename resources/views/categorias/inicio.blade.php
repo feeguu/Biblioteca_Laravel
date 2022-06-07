@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Produtos</title>
+    <script src="{{asset('js/script.js')}}"></script>
+    <title>Categorias</title>
 </head>
 
 <body>
     <div class="flex h-screen w-screen items-center justify-center bg-indigo-500">
         <div class="flex h-3/5 w-1/4 flex-col items-center rounded-lg bg-slate-200 p-8 font-sans">
-            <h1 class="text-3xl">Produtos</h1>
+            <h1 class="text-3xl">Categorias</h1>
             <div class="item mt-8 flex h-full w-full flex-col items-center">
-                <a href="/cadastrar-produto"
+                <a href="/categorias/cadastrar"
                     class="w-4/6 border-b border-indigo-500 bg-white p-6 text-center transition duration-300 ease-out hover:bg-indigo-500">Cadastrar</a>
-                <a href="/listar-produto"
+                <a href="/categorias/listar"
                     class="w-4/6 border-b border-indigo-500 bg-white p-6 text-center transition duration-300 ease-out hover:bg-indigo-500">Listar</a>
-                <a href="/editar-produto"
+                <a href="/categorias/editar"
                     class="w-4/6 border-b border-indigo-500 bg-white p-6 text-center transition duration-300 ease-out hover:bg-indigo-500">Editar</a>
-                <a href="/excluir-produto"
+                <a href="/categorias/excluir"
                     class="w-4/6 border-b border-indigo-500 bg-white p-6 text-center transition duration-300 ease-out hover:bg-indigo-500">Excluir</a>
             </div>
         </div>

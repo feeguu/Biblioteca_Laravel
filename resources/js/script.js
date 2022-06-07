@@ -1,0 +1,3 @@
+window.goBack = () => {
+    history.back()
+}

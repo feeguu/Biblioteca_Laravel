@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nome');
             $table->decimal('valor');
             $table->integer('estoque');
+
             $table->timestamps();
         });
     }

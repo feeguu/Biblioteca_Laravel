@@ -8,13 +8,7 @@
     <title>Produtos</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-    </style>
-    <script>
-        function goBack() {
-            window.location.href = "/"
-        }
-    </script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 
 <body>
@@ -32,6 +26,11 @@
                     <span class="my-2 text-lg">Estoque</span>
                     <input type="text" disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white"
                         value="{{ $produto->estoque }}">
+                    <span class="my-2 text-lg">Categoria</span>
+                    <select disabled class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white">
+                        <option selected value="{{ $produto->categoria_id }}">
+                            {{ $categoria->nome }}
+                        </option>
                 </div>
             </div>
             <div class="h-full w-full flex justify-center">

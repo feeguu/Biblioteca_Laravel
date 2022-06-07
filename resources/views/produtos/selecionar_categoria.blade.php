@@ -13,15 +13,11 @@ $endpoint = end($array);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Produtos</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/script.js')}}"></script>
     <script>
         redirect = () => {
             let id = document.querySelector("#id").value
-            window.location.href = '/{{ $endpoint }}/' + id
-        }
-
-        function goBack() {
-            window.location.href = "/"
+            window.location.href = '/produtos/{{ $endpoint }}/' + id
         }
     </script>
 </head>
@@ -32,9 +28,12 @@ $endpoint = end($array);
             <h1 class="text-3xl">Produtos</h1>
             <div class="flex flex-col mt-6 h-full w-full">
                 <div class="w-full">
-                    <span class="my-2 text-lg">ID</span>
-                    <input type="text" name="id" id="id"
-                        class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white">
+                    <span class="my-2 text-lg">Categoria</span>
+                    <select id="id" class="h-8 w-full rounded-sm border-b-2 border-indigo-500 bg-white">
+                        @foreach($categorias as $categoria)
+                        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="flex justify-around">
                     <button class="btn-secondary" onclick="goBack()">Voltar</button>
